@@ -1,0 +1,9 @@
+#/bin/sh
+
+# This gathers just the events that cause aulast to transition states. It
+# makes troubleshooting easier.
+ausearch --start yesterday --raw -m service_start,service_stop,system_boot,system_shutdown,daemon_start,daemon_end,daemon_abort,login,user_start,user_end,user_login > audit.log
+
+# A complete definition for the audit-validation tool
+#ausearch --start yesterday --raw -m service_start,service_stop,system_boot,system_shutdown,daemon_start,daemon_end,daemon_abort,user_auth,user_acct,cred_acq,login,user_role_change,user_start,cred_refr,cred_disp,user_end,user_logout > audit.log
+

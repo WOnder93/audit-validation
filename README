@@ -1,0 +1,14 @@
+This program is used to validate that all expected audit events are being
+sent. To use this program, first as root extract a test case:
+
+# su - root -c ./gather-test-case
+
+then
+
+# make
+# ./audit-validate -f audit.log
+
+The program is validating that:
+1) SYSTEM_START, SYSTEM_SHUTDOWN events are occuring
+2) For every started service you get a matching service_stop event
+3) Eventually it will check the user session 
